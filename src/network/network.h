@@ -4,13 +4,13 @@
 #include <string>
 #include <filesystem>
 
-#ifdef _WINDOWS
-#define LH_WINDOWS_PLATFORM
+#include "../../include/lh_config.h"
 
+#ifdef LH_WINDOWS_PLATFORM
 #include "winhttp.h"
 
-#pragma comment(lib, 'winhttp.lib')
-#endif
+#pragma comment(lib, "winhttp.lib")
+#endif // LH_WINDOWS_PLATFORM
 
 namespace little_helper {
 namespace network {
@@ -23,4 +23,4 @@ namespace network {
 
 
 
-#endif
+#endif // _INCLUDE_LH_NETWORK_
