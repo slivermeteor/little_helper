@@ -1,4 +1,4 @@
-#include _INCLUDE_LH_ENCODING_
+#ifndef _INCLUDE_LH_ENCODING_
 #define _INCLUDE_LH_ENCODING_
 
 #include "../../include/lh_config.h"

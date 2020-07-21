@@ -16,7 +16,9 @@ namespace little_helper {
 namespace network {
     std::string guessFileName(const std::string& url);
     std::wstring guessFileName(const std::wstring& url);
-    
+
+    std::string getUrlParamValue(const std::string& url, const std::string& param);
+    std::wstring getUrlParamValue(const std::wstring& url, const std::wstring& param);
     
 }
 }
