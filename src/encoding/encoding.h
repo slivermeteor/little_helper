@@ -13,6 +13,9 @@ namespace encoding {
 std::string to_utf8(const std::wstring& src);
 std::string to_utf8(const wchar_t* src, int size = -1);
 
+std::wstring from_utf8(const std::string& src);
+std::wstring from_utf8(const char* src, int size = -1);
+
 }
 }
 

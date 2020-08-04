@@ -21,7 +21,7 @@ std::string encoding::to_utf8(const wchar_t* src, int size)
     str_u8.resize(need_size);
     WideCharToMultiByte(CP_UTF8, 0, src, size, const_cast<char*>(str_u8.c_str()), need_size, nullptr, false);
 #else
-    auto& f = std::use_facet<std::codecvt<wchar_t, char, sd::mbstate_t>>(std::locale());
+    auto& f = std::use_facet<std::codecvt<wchar_t, char, std::mbstate_t>>(std::locale());
     std::mbstate_t state = std::mbstate_t();
     const wchar_t* from_next = nullptr;
     char* to_next = nullptr;
@@ -31,4 +31,25 @@ std::string encoding::to_utf8(const wchar_t* src, int size)
     str_u8.resize(to_next - str_u8.c_str());
 #endif // PLATFORM_WINDOWS_IN_LH
     return str_u8;
+}
+
+std::wstring encoding::from_utf8(const std::string& src)
+{
+    return from_utf8(src.c_str(), src.size());
+}
+
+std::wstring encoding::from_utf8(const char* src, int size)
+{
+    std::wstring wstr_u8;
+    if (size < 0)
+        size = static_cast<int>(strlen(src));
+
+#ifdef PLATFORM_WINDOWS_IN_LH
+    int need_size = MultiByteToWideChar(CP_UTF8, 0, src, size, 0, 0);
+    wstr_u8.resize(need_size);
+    MultiByteToWideChar(CP_UTF8, 0, src, size, const_cast<wchar_t*>(wstr_u8.c_str()), need_size);
+#else
+
+#endif
+    
 }
