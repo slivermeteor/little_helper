@@ -180,3 +180,6 @@ GeneratedFiles/
 *.zip
 *.7z
 *.rar
+
+# my self
+*.run
