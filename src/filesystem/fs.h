@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "../../include/lh_config.h"
+#include "include/lh_config.h"
 
 #if __cplusplus > 201703L
 #include <filesystem>

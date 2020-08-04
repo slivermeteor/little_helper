@@ -4,7 +4,7 @@
 #include <string>
 #include <filesystem>
 
-#include "../../include/lh_config.h"
+#include "include/lh_config.h"
 
 #ifdef LH_WINDOWS_PLATFORM
 #include "winhttp.h"

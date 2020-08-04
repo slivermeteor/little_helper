@@ -27,7 +27,7 @@ std::string encoding::to_utf8(const wchar_t* src, int size)
     char* to_next = nullptr;
     f.out(state,
     src, src + size, from_next,
-    const_cast<char_t*>(str_u8.c_str()), const_cast<char_t*>(str_u8.c_str()) + str.size(), to_next);
+    const_cast<char*>(str_u8.c_str()), const_cast<char*>(str_u8.c_str()) + str_u8.size(), to_next);
     str_u8.resize(to_next - str_u8.c_str());
 #endif // PLATFORM_WINDOWS_IN_LH
     return str_u8;
@@ -51,5 +51,6 @@ std::wstring encoding::from_utf8(const char* src, int size)
 #else
 
 #endif
-    
+
+    return wstr_u8;
 }

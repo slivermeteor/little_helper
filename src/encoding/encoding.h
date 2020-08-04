@@ -1,10 +1,11 @@
 #ifndef _INCLUDE_LH_ENCODING_
 #define _INCLUDE_LH_ENCODING_
 
-#include "../../include/lh_config.h"
+#include "include/lh_config.h"
 
 #include <codecvt>
 #include <string>
+#include <cstring>
 
 
 namespace little_helper {
