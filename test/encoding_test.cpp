@@ -1,4 +1,4 @@
-#include "..\include\little_helper.hpp"
+#include "little_helper.hpp"
 
 #include <iostream>
 #include <string>
