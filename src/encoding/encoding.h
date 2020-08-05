@@ -17,6 +17,14 @@ std::string to_utf8(const wchar_t* src, int size = -1);
 std::wstring from_utf8(const std::string& src);
 std::wstring from_utf8(const char* src, int size = -1);
 
+std::string to_local(const std::wstring& src);
+std::string to_local(const wchar_t* src, int size = -1);
+
+std::wstring from_local(const std::string& src);
+std::wstring from_local(const char* src, int size = -1);
+
+
+
 }
 }
 
